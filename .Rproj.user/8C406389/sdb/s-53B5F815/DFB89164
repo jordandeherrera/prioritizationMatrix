@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "# List out names of \nreadValues()\nreadPriorities()\n\n# Determine priority values\nvaluesImportance(values)\npriorityImportance(priorities)\n\n# Visualize Priority Matrix with Heatmap\ncreateHeatmap()\n\n# Evaluation option\nelearning <- optionImportance(priorities)\nsaas <- optionImportance(priorities)\nrealEstate <- optionImportance(priorities)\n\n# Evaluate all options\nelearning %>% inner_join(saas) %>% inner_join(realEstate)\n\n# Customer evaluation with Pareto charts\nreadParetoOptions()\nparetoImportance(pOptions)\ncreateParetoChart(pOptions,poImport)\n\n# Create a strategy canvas\nreadStrategyOptions()\nstrategyOptionImportance(sOptions)\ncreateStrategyCanvas(sOptions,soImport1,soImport2)\n",
+    "created" : 1502828911650.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "253361206",
+    "id" : "DFB89164",
+    "lastKnownWriteTime" : 1502854808,
+    "last_content_update" : 1502854808509,
+    "path" : "~/Personal Google Drive/Dropbox/Productivity/Learning/Programming/R/prioritizationMatrix/R/vignette_functions.R",
+    "project_path" : "R/vignette_functions.R",
+    "properties" : {
+        "source_window_id" : "",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
