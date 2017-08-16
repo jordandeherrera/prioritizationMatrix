@@ -1,11 +1,11 @@
 #' Read Values
 #'
 #' This is a simple function that provides a prompt to the user to enter in values. These will be 
-#' the names of columns for the priority matrix.  No parameters are taken for this function.
-#'
+#' the names of columns for the priority matrix.  No parameters are taken for this function and all input
+#' values are taken from the console.
 #' 
-#' @return This function does not return any values.  Instead, it save an array character object based
-#' on the user's input.  
+#' @return This function does not return any values.  Instead, it saves an array character object based
+#' on the user's input to the global environment for use in \link{valuesImportance}.
 #'
 #' @examples
 #' readValues()
@@ -24,12 +24,12 @@ readValues <- function()
 
 #' Read Priorities
 #'
-#' This is a simple function that provides a prompt to the user to enter in priorities. These will be 
-#' the names of rows for the priority matrix.  No parameters are taken for this function.
-#'
+#' This is a simple function that provides a prompt to the user to enter in strategic priorities These will be 
+#' the names of rows for the priority matrix.  No parameters are taken for this function and all input
+#' values are taken from the console.
 #' 
-#' @return This function does not return any values.  Instead, it save an array character object based
-#' on the user's input.  
+#' @return This function does not return any values.  Instead, it saves an array character object based
+#' on the user's input to the global environment for use in \link{priorityImportance}.
 #'
 #' @examples
 #' readPriorities()
@@ -46,6 +46,27 @@ readPriorities <- function()
   priorities <<- unlist(strsplit(priorities, split=", "))
 }
 
+#' Rank Importance of Values
+#'
+#' This function assigns relative rank and importance to the values defined in \link{readValues}.  These 
+#' numerical assignments are then used by \link{createPriorityMatrix} and \link{createHeatmap}.
+#' 
+#' @param arrayList a list of values to assign numeric importance.  Can be taken from \link{readValues} output object of \code{values}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array numeric object based
+#' on the user's input to the global environment.
+#'
+#' @examples
+#' valuesImportance()
+#' # On a scale of 1 to 5, how important is Contribution ?
+#' 5
+#' # On a scale of 1 to 5, how important is Certainty ?
+#' 2
+#' # On a scale of 1 to 5, how important is Connection ?
+#' 5
+#' #Value available in global variable vImport = c(5,2,5)
+#'
+#' @export
 valuesImportance <- function(arrayList = c("Contribution","Certainty","Connection")){
   vImport <<- NULL
   
@@ -56,6 +77,27 @@ valuesImportance <- function(arrayList = c("Contribution","Certainty","Connectio
   }
 }
 
+#' Rank Importance of Priorities
+#'
+#' This function assigns relative rank and importance to the priorities defined in \link{readPriorities}.  These 
+#' numerical assignments are then used by \link{createPriorityMatrix} and \link{createHeatmap}.
+#' 
+#' @param arrayList a list of values to assign numeric importance.  Can be taken from \link{readPriorities} output object of \code{priorities}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array numeric object based
+#' on the user's input to the global environment.
+#'
+#' @examples
+#' priorityImportance()
+#' # On a scale of 1 to 5, how important is Certifications ?
+#' 1
+#' # On a scale of 1 to 5, how important is Mentorship ?
+#' 4
+#' # On a scale of 1 to 5, how important is On the job learning ?
+#' 5
+#' #Value available in global variable pImport = c(1,4,5)
+#'
+#' @export
 priorityImportance <- function(arrayList = c("Professional certifications", 
                                              "On the job learning", "Mentorship")){
   pImport <<- NULL
@@ -67,6 +109,30 @@ priorityImportance <- function(arrayList = c("Professional certifications",
   }
 }
 
+#' Create Priority Matrix
+#'
+#' This function creates a priority matrix that is a result of \link{priorityImportance} and 
+#' \link{valuesImportance} for numeric values of \link{readValues} and \link{readPriorities}.
+#' 
+#' @param vImport a numeric list assigning importance to values.  
+#' Can be taken from \link{valuesImportance} output object of \code{vImport}.
+#' 
+#' @param pImport a numeric list assigning importance to priorities  
+#' Can be taken from \link{priorityImportance} output object of \code{pImport}.
+#' 
+#' @param priorities a character array of priorities.  
+#' Can be taken from \link{readPriorities} output object of \code{priorities}.
+#' 
+#' @param values a character array of values  
+#' Can be taken from \link{readValues} output object of \code{values}.
+#' 
+#' @return This function returns a priority matrix as a data frame (values as columns and priorities as rows).  
+#' Values in matrix are the result of cross-multiplication.
+#'
+#' @examples
+#' createPriorityMatrix(vImport,pImport,priorities,values)
+#'
+#' @export
 createPriorityMatrix <- function(vImport = c(3,3,5),pImport = c(2,5,5),
                                  priorities = c("Professional certifications", 
                                                 "On the job learning", "Mentorship"),
@@ -91,6 +157,16 @@ createPriorityMatrix <- function(vImport = c(3,3,5),pImport = c(2,5,5),
   df
 }
 
+#' Create Heatmap
+#'
+#' This function creates a heatmap of the priority matrix available in \link{createPriorityMatrix}.
+#' 
+#' @return This function returns a highcharter object (heatmap).
+#'
+#' @examples
+#' createHeatmap()
+#'
+#' @export
 createHeatmap <- function (){
   require(highcharter)
   require(lazyeval)
@@ -138,6 +214,29 @@ createHeatmap <- function (){
   return(hc)
 }
 
+#' Evaluate a Strategic Option Against Priority Matrix
+#'
+#' This function determines whether a given strategic option is aligned with priorities as defined by the
+#' \link{createPriorityMatrix} and \link{createHeatmap}.
+#' 
+#' @param arrayList a list of priorities to evaluate numeric significance for a given strategic option.  
+#' Can be taken from \link{readPriorities} output object of \code{priorities}.
+#' 
+#' @return This function returns a data frame to evaluate strategic option alignment with a given set of priorities
+#' and values.
+#'
+#' @examples
+#' optionImportance(priorities)
+#' # Enter the name of the option being considered:
+#' Job from Company A
+#' # On a scale of 1 to 5, how much does Job.from.Company.A fulfill Professional certifications ?
+#' 1
+#' # On a scale of 1 to 5, how much does Job.from.Company.A fulfill On the job learning ?
+#' 5
+#' # On a scale of 1 to 5, how much does Job.from.Company.A fulfill Mentorship ?
+#' 5
+#' 
+#' @export
 optionImportance <- function(arrayList = c("Professional certifications", 
                                              "On the job learning", "Mentorship")){
   # Load required libraries
@@ -183,6 +282,21 @@ optionImportance <- function(arrayList = c("Professional certifications",
   )
 }
 
+#' Read Pareto Options
+#'
+#' This is a simple function that provides a prompt to the user to enter in Pareto strategic options. These
+#' will be the x-axis of a Pareto chart in \link{createParetoChart}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array character object based
+#' on the user's input to the global environment for use in \link{paretoImportance}.  The object is accessible at
+#' \code{pOptions}.
+#'
+#' @examples
+#' readParetoOptions()
+#' Job 1, Job 2, Job 3
+#' #Value available in global variable pOptions = c("Job 1","Job 2","Job 3")
+#'
+#' @export
 readParetoOptions <- function()
 {
   pOptions <<- NULL
@@ -192,6 +306,28 @@ readParetoOptions <- function()
   pOptions <<- unlist(strsplit(pOptions, split=", "))
 }
 
+#' Rank Importance of Pareto Options
+#'
+#' This function assigns relative rank and importance to the Pareto options defined in \link{readParetoOptions}.  
+#' These numerical assignments are then used by \link{createParetoChart}.
+#' 
+#' @param arrayList a list of values to assign numeric importance.  Can be taken from \link{readParetoOption} 
+#' output object of \code{pOptions}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array numeric object based
+#' on the user's input to the global environment.
+#'
+#' @examples
+#' paretoImportance(pOptions)
+#' # On a scale of 1 to 5, how important is Job 1 ?
+#' 1
+#' # On a scale of 1 to 5, how important is Job 2 ?
+#' 5
+#' # On a scale of 1 to 5, how important is Job 3 ?
+#' 3
+#' #Value available in global variable poImport = c(1,5,3)
+#'
+#' @export
 paretoImportance <- function(arrayList = c("Customer 1","Customer 2","Customer 3")){
   poImport <<- NULL
   
@@ -202,6 +338,20 @@ paretoImportance <- function(arrayList = c("Customer 1","Customer 2","Customer 3
   }
 }
 
+#' Create Pareto Chart
+#'
+#' This function creates a Pareto chart of the Pareto options evaluated in \link{paretoImportance}.
+#' 
+#' @param pOptions The names of the Pareto options in \link{readParetoOptions}.
+#' 
+#' @param poImport The numeric values assigned to each Pareto option in \link{paretoImportance}.
+#' 
+#' @return This function returns a Pareto chart as a highcharter object (column and line charts).
+#'
+#' @examples
+#' createParetoChart(pOptions,poImport)
+#'
+#' @export
 createParetoChart <- function(pOptions = c("Customer 1","Customer 2","Customer 3"),poImport = c(5,3,1)){
   require(dplyr)
   require(highcharter)
@@ -226,6 +376,7 @@ createParetoChart <- function(pOptions = c("Customer 1","Customer 2","Customer 3
     hc_add_series_df(data = data,x = Names, y = Pct,type="line")
   return(hc)
 }
+
 
 readStrategyOptions <- function()
 {
