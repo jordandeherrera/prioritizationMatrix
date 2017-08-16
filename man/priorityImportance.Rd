@@ -7,6 +7,9 @@
 priorityImportance(arrayList = c("Professional certifications",
   "On the job learning", "Mentorship"))
 }
+\arguments{
+\item{arrayList}{a list of values to assign numeric importance.  Can be taken from \link{readPriorities} output object of \code{priorities}.}
+}
 \value{
 This function does not return any values.  Instead, it saves an array numeric object based
 on the user's input to the global environment.
@@ -17,12 +20,12 @@ numerical assignments are then used by \link{createPriorityMatrix} and \link{cre
 }
 \examples{
 priorityImportance()
-# On a scale of 1 to 5, how important is Contribution ?
+# On a scale of 1 to 5, how important is Certifications ?
+1
+# On a scale of 1 to 5, how important is Mentorship ?
+4
+# On a scale of 1 to 5, how important is On the job learning ?
 5
-# On a scale of 1 to 5, how important is Certainty ?
-2
-# On a scale of 1 to 5, how important is Connection ?
-5
-#Value available in global variable vImport = c(5,2,5)
+#Value available in global variable pImport = c(1,4,5)
 
 }

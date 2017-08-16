@@ -377,16 +377,44 @@ createParetoChart <- function(pOptions = c("Customer 1","Customer 2","Customer 3
   return(hc)
 }
 
-
+#' Read Strategy Options
+#'
+#' This is a simple function that provides a prompt to the user to enter in strategic options. These
+#' will be the x-axis of a strategy canvas in \link{createStrategyCanvas}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array character object based
+#' on the user's input to the global environment for use in \link{strategyOptionImportance}.  
+#' The object is accessible at \code{sOptions}.
+#'
+#' @examples
+#' readStrategyOptions()
+#' Bookkeeping, Internal Controls Analysis, Financial and Business Review
+#' #Value available in global variable sOptions = c("Bookkeeping","Internal Controls Analysis", Financial and Business Review")
+#'
+#' @export
 readStrategyOptions <- function()
 {
-  pOptions <<- NULL
+  sOptions <<- NULL
   
   cat ("Enter in names of strategy options separated by commas and spaces (i.e., Option1, Option2, Option3, etc.")
   sOptions <<- readline()
   sOptions <<- unlist(strsplit(sOptions, split=", "))
 }
 
+#' Rank Importance of Strategy Options
+#'
+#' This function assigns relative rank and importance to the strategy options defined in \link{readStrategyOptions}.  
+#' These numerical assignments are then used by \link{createStrategyCanvas}.
+#' 
+#' @param arrayList a list of strategy options to assign numeric importance.  Can be taken from \link{readStrategyOptions} 
+#' output object of \code{sOptions}.
+#' 
+#' @return This function does not return any values.  Instead, it saves an array numeric object based
+#' on the user's input to the global environment.
+#'
+#' @examples
+#' strategyOptionImportance(sOptions)
+#' @export
 strategyOptionImportance <- function(arrayList = c("Option 1","Option 2","Option 3")){
   soImport1 <<- NULL
   soImport2 <<- NULL
@@ -401,6 +429,24 @@ strategyOptionImportance <- function(arrayList = c("Option 1","Option 2","Option
   }
 }
 
+#' Create Strategy Canvas
+#'
+#' This function creates a strategy canvas of the strategy options evaluated in \link{strategyOptionImportance}.
+#' 
+#' @param sOptions The names of the strategy options in \link{readStrategyOptions}.
+#' 
+#' @param soImport1 The numeric values assigned to each strategy option relative to industry standards
+#' in \link{strategyOptionImportance}.
+#' 
+#' @param soImport2 The numeric values assigned to each strategy option relative to differentiated standards
+#' in \link{strategyOptionImportance}.
+#' 
+#' @return This function returns a strategy canvas as a highcharter object (two line charts).
+#'
+#' @examples
+#' createStrategyCanvas(sOptions,soImport1,soImport2)
+#'
+#' @export
 createStrategyCanvas <- function(sOptions = c("Option 1","Option 2","Option 3"),soImport1 = c(5,3,1),
                                  soImport2 = c(1,3,5)){
   require(dplyr)
