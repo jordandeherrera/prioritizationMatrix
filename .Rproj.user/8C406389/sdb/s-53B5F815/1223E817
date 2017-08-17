@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Priority Matrix Package\n#'\n#' The Priority Matrix Package helps users to make strategic decisions.  It creates:\n#' \n#' \\subsection{Priority Matrices}{\n#' \n#' \\link{readValues} - List out values in priority matrix\n#' \n#' \\link{valuesImportance} - Evaluate the relative importance of each value\n#' \n#' \\link{readPriorities} - List out priorities in priority matrix\n#' \n#' \\link{priorityImportance} - Evaluate the relative importance of each priority\n#' \n#' \\link{createPriorityMatrix} - Create priority matrix data frame\n#' \n#' \\link{createHeatmap} - Create priority matrix visualization\n#' \n#' \\link{optionImportance} - Evaluate whether a strategic option is aligned with priorities and values\n#' \n#' }\n#' \n#' \\subsection{Pareto 80/20 Rule}{\n#' \n#' \\link{readParetoOptions} - List out Pareto options\n#' \n#' \\link{paretoImportance} - Evaluate the relative importance of each Pareto option\n#' \n#' \\link{createParetoChart} - Create Pareto chart based on inputs\n#' \n#' }\n#'\n#' \\subsection{Strategy Canvas - Strategic Differentiation}{\n#' \n#' \\link{readStrategyOptions} - List out strategic options and competition points\n#' \n#' \\link{strategyOptionImportance} - Evaluate the relative importance of each strategic option\n#' \n#' \\link{createStrategyCanvas} - Create strategy canvas based on inputs\n#' \n#' }\n#'\n#' The only function you're likely to need from \\pkg{roxygen2} is\n#' \\code{\\link{roxygenize}}. Otherwise refer to the vignettes to see\n#' how to format the documentation.\n\"_PACKAGE\"\n#> [1] \"_PACKAGE\"",
+    "created" : 1502934959998.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4093357667",
+    "id" : "1223E817",
+    "lastKnownWriteTime" : 1502940750,
+    "last_content_update" : 1502940750182,
+    "path" : "~/Personal Google Drive/Dropbox/Productivity/Learning/Programming/R/priorityMatrix.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
