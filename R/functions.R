@@ -132,6 +132,8 @@ priorityImportance <- function(arrayList = c("Professional certifications",
 #' @examples
 #' createPriorityMatrix(vImport,pImport,priorities,values)
 #'
+#' @import dplyr
+#'
 #' @export
 createPriorityMatrix <- function(vImport = c(3,3,5),pImport = c(2,5,5),
                                  priorities = c("Professional certifications", 
@@ -165,6 +167,12 @@ createPriorityMatrix <- function(vImport = c(3,3,5),pImport = c(2,5,5),
 #'
 #' @examples
 #' createHeatmap()
+#'
+#' @import highcharter
+#' 
+#' @import lazyeval
+#' 
+#' @import tidyr
 #'
 #' @export
 createHeatmap <- function (){
@@ -235,6 +243,12 @@ createHeatmap <- function (){
 #' 5
 #' # On a scale of 1 to 5, how much does Job.from.Company.A fulfill Mentorship ?
 #' 5
+#' 
+#' @import dplyr
+#' 
+#' @import lazyeval
+#' 
+#' @import stringr
 #' 
 #' @export
 optionImportance <- function(arrayList = c("Professional certifications", 
@@ -351,6 +365,10 @@ paretoImportance <- function(arrayList = c("Customer 1","Customer 2","Customer 3
 #' @examples
 #' createParetoChart(pOptions,poImport)
 #'
+#' @import dplyr
+#' 
+#' @import highcharter
+#'
 #' @export
 createParetoChart <- function(pOptions = c("Customer 1","Customer 2","Customer 3"),poImport = c(5,3,1)){
   require(dplyr)
@@ -445,6 +463,12 @@ strategyOptionImportance <- function(arrayList = c("Option 1","Option 2","Option
 #'
 #' @examples
 #' createStrategyCanvas(sOptions,soImport1,soImport2)
+#'
+#' @import dplyr
+#' 
+#' @import highcharter
+#' 
+#' @import tidyr
 #'
 #' @export
 createStrategyCanvas <- function(sOptions = c("Option 1","Option 2","Option 3"),soImport1 = c(5,3,1),

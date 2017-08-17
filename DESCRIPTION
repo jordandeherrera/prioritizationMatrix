@@ -1,10 +1,10 @@
 Package: priorityMatrix
-Title: What the Package Does (one line, title case)
+Title: Easy Strategy Decision Making Tools
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Jordan", "DeHerrera", email = "jordan.deherrera@gmail.com", role = c("aut", "cre"))
+Description: The Priority Matrix package helps make strategic decisions by utilizing the following tools: prioritization matrices, pareto charts, and strategy canvases.
 Depends: R (>= 3.4.1)
-License: What license is it under?
+License: GPL
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr,
