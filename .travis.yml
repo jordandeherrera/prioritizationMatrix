@@ -3,3 +3,15 @@
 language: R
 sudo: false
 cache: packages
+r_check_revdep: false
+repos:
+  CRAN: https://cloud.r-project.org
+  IRkernel: https://irkernel.github.io/
+git:
+  depth: 1
+r_packages:
+  - highcharter
+  - tidyr
+  - lazyeval
+  - stringr
+  - dplyr
