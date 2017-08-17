@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Example of Priority Matrix Package\"\nauthor: \"Jordan DeHerrera\"\ndate: \"`r Sys.Date()`\"\noutput: rmarkdown::html_vignette\nvignette: >\n  %\\VignetteIndexEntry{Vignette Title}\n  %\\VignetteEngine{knitr::rmarkdown}\n  %\\VignetteEncoding{UTF-8}\n---\n\nThe Priority Matrix package helps make strategic decisions by utilizing the following tools:\n* Prioritization Matrix\n* Pareto Analysis\n* Strategy Canvas\n\n## Installation\nYou can install the Priority Matrix package by using the devtools github installer in R:\n\n```{r install, eval=FALSE}\nlibrary(devtools)\ndevtools::install_github(\"jsdeherrera/prioritizationMatrix\")\n```\n\n## Prioritization Matrix\nPrioritization matrices are a standard part of the Six Sigma toolkit.  They can be used to make difficult decisions by aligning options according to our values and priorities.  Based on the interactions of these two sets of values and how well given options satisfy both, we can more easily determine the best path (as well as which paths we should avoid because they do not align with either our values nor priorities).\n\nExample of prioritization matrix:\n\n```{r heatmap, warning=FALSE, message=FALSE}\nlibrary(priorityMatrix)\npriorities <- c(\"Compelling use case\",\"Affordable and low cost\",\"More convenient\")\nvalues <- c(\"Social Currency\",\"Price\",\"Design\",\"Function\",\"Personal Narrative\")\nvImport <- c(5,2,2,4,5)\npImport <- c(5,2,3)\ncreateHeatmap()\n```\n\n## Pareto Analysis\nThe 80/20 rule is a filtering mechanism that allows us to focus on the most important members of a population.  It's broad applicability can be seen in [Benford's Law][https://en.wikipedia.org/wiki/Benford%27s_law] due to how [information entropy][https://en.wikipedia.org/wiki/Entropy_(information_theory)] works.  Basically, roughly 80% of any given result is due to just 20% of our efforts.\n\nExample of Pareto chart:\n\n```{r pareto, warning=FALSE, message=FALSE}\npOptions <- c(\"Social Currency\",\"Price\",\"Design\",\"Function\",\"Personal Narrative\")\npoImport <- c(5,2,2,4,5)\ncreateParetoChart(pOptions,poImport)\n```\n\n## Strategy Canvas\nA strategy canvas is a tool made popular by the book, [Blue Ocean Strategy][https://en.wikipedia.org/wiki/Blue_Ocean_Strategy].  The basic premise is that in order to compete effectively, enterprises need to purposely decide how they will be different from their competitors.  This results in low cost to produce, high value outputs.\n\nExample of strategy canvas:\n\n```{r canvas, warning=FALSE, message=FALSE}\nsOptions <- c(\"Social Currency\",\"Price\",\"Design\",\"Function\",\"Personal Narrative\")\nsoImport1 <- c(1,5,2,5,1)\nsoImport2 <- c(5,1,5,1,5)\ncreateStrategyCanvas(sOptions,soImport1,soImport2)\n```\n",
+    "created" : 1502942411423.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3580068337",
+    "id" : "976CDCD6",
+    "lastKnownWriteTime" : 1502942413,
+    "last_content_update" : 1502942413364,
+    "path" : "~/Personal Google Drive/Dropbox/Productivity/Learning/Programming/R/prioritizationMatrix/vignettes/example.Rmd",
+    "project_path" : "vignettes/example.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
