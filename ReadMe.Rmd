@@ -5,6 +5,7 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, screenshot.opts = list(delay = 5))
 ```
 
 The Priority Matrix package helps make strategic decisions by utilizing the following tools:
