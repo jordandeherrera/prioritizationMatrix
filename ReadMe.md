@@ -1,7 +1,11 @@
 ReadMe
 ================
 
-The Priority Matrix package helps make strategic decisions by utilizing the following tools: \* Prioritization Matrix \* Pareto Analysis \* Strategy Canvas
+The Priority Matrix package helps make strategic decisions by utilizing the following tools:
+
+-   Prioritization Matrix
+-   Pareto Analysis
+-   Strategy Canvas
 
 Installation
 ------------
