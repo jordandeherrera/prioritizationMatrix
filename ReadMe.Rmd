@@ -38,7 +38,7 @@ hc1
 ```
 
 ## Pareto Analysis
-The 80/20 rule is a filtering mechanism that allows us to focus on the most important members of a population.  It's broad applicability can be seen in [Benford's Law][https://en.wikipedia.org/wiki/Benford%27s_law] due to how [information entropy][https://en.wikipedia.org/wiki/Entropy_(information_theory)] works.  Basically, roughly 80% of any given result is due to just 20% of our efforts.
+The 80/20 rule is a filtering mechanism that allows us to focus on the most important members of a population.  It's broad applicability can be seen in [Benford's Law](https://en.wikipedia.org/wiki/Benford%27s_law) due to how [information entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) works.  Basically, roughly 80% of any given result is due to just 20% of our efforts.
 
 Example of Pareto chart:
 
@@ -50,7 +50,7 @@ hc2
 ```
 
 ## Strategy Canvas
-A strategy canvas is a tool made popular by the book, [Blue Ocean Strategy][https://en.wikipedia.org/wiki/Blue_Ocean_Strategy].  The basic premise is that in order to compete effectively, enterprises need to purposely decide how they will be different from their competitors.  This results in low cost to produce, high value outputs.
+A strategy canvas is a tool made popular by the book, [Blue Ocean Strategy](https://en.wikipedia.org/wiki/Blue_Ocean_Strategy).  The basic premise is that in order to compete effectively, enterprises need to purposely decide how they will be different from their competitors.  This results in low cost to produce, high value outputs.
 
 Example of strategy canvas:
 
