@@ -62,7 +62,12 @@ createStrategyCanvas(sOptions,soImport1,soImport2)
 
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/canvas-1.png)
 
-To Do Items
------------
+Vignette
+--------
 
--   Fill out vignette
+A vignette of the package is available in the vignettes folder.
+
+Travis
+------
+
+The current build of this package has been tested and passed by Travis.

@@ -57,3 +57,8 @@ soImport2 <- c(5,1,5,1,5)
 createStrategyCanvas(sOptions,soImport1,soImport2)
 ```
 
+## Vignette
+A vignette of the package is available in the vignettes folder.
+
+## Travis
+The current build of this package has been tested and passed by Travis.
