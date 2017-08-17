@@ -38,3 +38,17 @@ You can also embed plots, for example:
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/pressure-1.png)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Heatmap Example
+---------------
+
+``` r
+library(priorityMatrix)
+priorities <- c("Compelling use case","Affordable and low cost","More convenient")
+values <- c("Social Currency","Price","Design","Function","Personal Narrative")
+vImport <- c(5,2,2,4,5)
+pImport <- c(5,2,3)
+createHeatmap()
+```
+
+![](ReadMe_files/figure-markdown_github-ascii_identifiers/heatmap-1.png)

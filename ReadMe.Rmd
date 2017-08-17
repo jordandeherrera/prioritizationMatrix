@@ -33,3 +33,20 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Prioritization Matrix Example
+
+```{r heatmap, warning=FALSE, message=FALSE}
+library(priorityMatrix)
+priorities <- c("Compelling use case","Affordable and low cost","More convenient")
+values <- c("Social Currency","Price","Design","Function","Personal Narrative")
+vImport <- c(5,2,2,4,5)
+pImport <- c(5,2,3)
+createHeatmap()
+```
+
+## Evaluating a Business Idea Based on the Prioritization Matrix
+
+```{r evalOption, warning=FALSE, message=FALSE}
+optionImportance(priorities)
+```

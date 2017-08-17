@@ -1,17 +1,18 @@
 {
     "collab_server" : "",
-    "contents" : "---\ntitle: \"ReadMe\"\noutput: github_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## To Do Items\n* Fill out vignette\n* Fill out ReadMe\n* Create package description markdown\n\n## GitHub Documents\n\nThis is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.\n\n## Including Code\n\nYou can include R code in the document as follows:\n\n```{r cars}\nsummary(cars)\n```\n\n## Including Plots\n\nYou can also embed plots, for example:\n\n```{r pressure, echo=FALSE}\nplot(pressure)\n```\n\nNote that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n",
+    "contents" : "---\ntitle: \"ReadMe\"\noutput: github_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## To Do Items\n* Fill out vignette\n* Fill out ReadMe\n* Create package description markdown\n\n## GitHub Documents\n\nThis is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.\n\n## Including Code\n\nYou can include R code in the document as follows:\n\n```{r cars}\nsummary(cars)\n```\n\n## Including Plots\n\nYou can also embed plots, for example:\n\n```{r pressure, echo=FALSE}\nplot(pressure)\n```\n\nNote that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n## Prioritization Matrix Example\n\n```{r heatmap, warning=FALSE, message=FALSE}\nlibrary(priorityMatrix)\npriorities <- c(\"Compelling use case\",\"Affordable and low cost\",\"More convenient\")\nvalues <- c(\"Social Currency\",\"Price\",\"Design\",\"Function\",\"Personal Narrative\")\nvImport <- c(5,2,2,4,5)\npImport <- c(5,2,3)\ncreateHeatmap()\n```\n\n## Evaluating a Business Idea Based on the Prioritization Matrix\n\n```{r evalOption, warning=FALSE, message=FALSE}\noptionImportance(priorities)\n```\n",
     "created" : 1502927237157.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1956404659",
+    "hash" : "2110117155",
     "id" : "AE80FB46",
-    "lastKnownWriteTime" : 1502928851,
-    "last_content_update" : 1502928851092,
+    "lastKnownWriteTime" : 1502929733,
+    "last_content_update" : 1502929733558,
     "path" : "~/Personal Google Drive/Dropbox/Productivity/Learning/Programming/R/prioritizationMatrix/ReadMe.Rmd",
     "project_path" : "ReadMe.Rmd",
     "properties" : {
+        "last_setup_crc32" : "9A5740EDbb338d19",
         "tempName" : "Untitled1"
     },
     "relative_order" : 5,
