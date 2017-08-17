@@ -1,0 +1,3 @@
+"0","pOptions <- c(""Social Currency"",""Price"",""Design"",""Function"",""Personal Narrative"")"
+"0","poImport <- c(5,2,2,4,5)"
+"0","createParetoChart(pOptions,poImport)"

@@ -7,34 +7,23 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## To Do Items
-* Fill out vignette
-* Fill out ReadMe
-* Create package description markdown
+The Priority Matrix package helps make strategic decisions by utilizing the following tools:
+* Prioritization Matrix
+* Pareto Analysis
+* Strategy Canvas
 
-## GitHub Documents
+## Installation
+You can install the Priority Matrix package by using the devtools github installer in R:
 
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
-summary(cars)
+```{r install, eval=FALSE}
+library(devtools)
+devtools::install_github("jsdeherrera/prioritizationMatrix")
 ```
 
-## Including Plots
+## Prioritization Matrix
+Prioritization matrices are a standard part of the Six Sigma toolkit.  They can be used to make difficult decisions by aligning options according to our values and priorities.  Based on the interactions of these two sets of values and how well given options satisfy both, we can more easily determine the best path (as well as which paths we should avoid because they do not align with either our values nor priorities).
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-## Prioritization Matrix Example
+Example of prioritization matrix:
 
 ```{r heatmap, warning=FALSE, message=FALSE}
 library(priorityMatrix)
@@ -45,8 +34,28 @@ pImport <- c(5,2,3)
 createHeatmap()
 ```
 
-## Evaluating a Business Idea Based on the Prioritization Matrix
+## Pareto Analysis
+The 80/20 rule is a filtering mechanism that allows us to focus on the most important members of a population.  It's broad applicability can be seen in [Benford's Law][https://en.wikipedia.org/wiki/Benford%27s_law] due to how [information entropy][https://en.wikipedia.org/wiki/Entropy_(information_theory)] works.  Basically, roughly 80% of any given result is due to just 20% of our efforts.
 
-```{r evalOption, warning=FALSE, message=FALSE}
-optionImportance(priorities)
+Example of Pareto chart:
+
+```{r pareto, warning=FALSE, message=FALSE}
+pOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
+poImport <- c(5,2,2,4,5)
+createParetoChart(pOptions,poImport)
 ```
+
+## Strategy Canvas
+A strategy canvas is a tool made popular by the book, [Blue Ocean Strategy][https://en.wikipedia.org/wiki/Blue_Ocean_Strategy].  The basic premise is that in order to compete effectively, enterprises need to purposely decide how they will be different from their competitors.  This results in low cost to produce, high value outputs.
+
+Example of strategy canvas:
+
+```{r canvas, warning=FALSE, message=FALSE}
+sOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
+soImport1 <- c(1,5,2,5,1)
+soImport2 <- c(5,1,5,1,5)
+createStrategyCanvas(sOptions,soImport1,soImport2)
+```
+
+## To Do Items
+* Fill out vignette

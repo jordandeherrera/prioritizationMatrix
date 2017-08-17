@@ -1,46 +1,24 @@
 ReadMe
 ================
 
-To Do Items
------------
+The Priority Matrix package helps make strategic decisions by utilizing the following tools: \* Prioritization Matrix \* Pareto Analysis \* Strategy Canvas
 
--   Fill out vignette
--   Fill out ReadMe
--   Create package description markdown
+Installation
+------------
 
-GitHub Documents
-----------------
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-Including Code
---------------
-
-You can include R code in the document as follows:
+You can install the Priority Matrix package by using the devtools github installer in R:
 
 ``` r
-summary(cars)
+library(devtools)
+devtools::install_github("jsdeherrera/prioritizationMatrix")
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+Prioritization Matrix
+---------------------
 
-Including Plots
----------------
+Prioritization matrices are a standard part of the Six Sigma toolkit. They can be used to make difficult decisions by aligning options according to our values and priorities. Based on the interactions of these two sets of values and how well given options satisfy both, we can more easily determine the best path (as well as which paths we should avoid because they do not align with either our values nor priorities).
 
-You can also embed plots, for example:
-
-![](ReadMe_files/figure-markdown_github-ascii_identifiers/pressure-1.png)
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-Heatmap Example
----------------
+Example of prioritization matrix:
 
 ``` r
 library(priorityMatrix)
@@ -52,3 +30,39 @@ createHeatmap()
 ```
 
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/heatmap-1.png)
+
+Pareto Analysis
+---------------
+
+The 80/20 rule is a filtering mechanism that allows us to focus on the most important members of a population. It's broad applicability can be seen in \[Benford's Law\]\[<https://en.wikipedia.org/wiki/Benford%27s_law>\] due to how \[information entropy\]\[<https://en.wikipedia.org/wiki/Entropy_(information_theory)>\] works. Basically, roughly 80% of any given result is due to just 20% of our efforts.
+
+Example of Pareto chart:
+
+``` r
+pOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
+poImport <- c(5,2,2,4,5)
+createParetoChart(pOptions,poImport)
+```
+
+![](ReadMe_files/figure-markdown_github-ascii_identifiers/pareto-1.png)
+
+Strategy Canvas
+---------------
+
+A strategy canvas is a tool made popular by the book, \[Blue Ocean Strategy\]\[<https://en.wikipedia.org/wiki/Blue_Ocean_Strategy>\]. The basic premise is that in order to compete effectively, enterprises need to purposely decide how they will be different from their competitors. This results in low cost to produce, high value outputs.
+
+Example of strategy canvas:
+
+``` r
+sOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
+soImport1 <- c(1,5,2,5,1)
+soImport2 <- c(5,1,5,1,5)
+createStrategyCanvas(sOptions,soImport1,soImport2)
+```
+
+![](ReadMe_files/figure-markdown_github-ascii_identifiers/canvas-1.png)
+
+To Do Items
+-----------
+
+-   Fill out vignette
