@@ -13,7 +13,7 @@
     "project_path" : ".travis.yml",
     "properties" : {
     },
-    "relative_order" : 5,
+    "relative_order" : 3,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "yaml"
