@@ -27,7 +27,7 @@ Prioritization matrices are a standard part of the Six Sigma toolkit.  They can 
 
 Example of prioritization matrix:
 
-```{r heatmap, warning=FALSE, message=FALSE}
+```{r heatmap, warning=FALSE, message=FALSE, eval = FALSE}
 library(priorityMatrix)
 priorities <- c("Compelling use case","Affordable and low cost","More convenient")
 values <- c("Social Currency","Price","Design","Function","Personal Narrative")
@@ -41,7 +41,7 @@ The 80/20 rule is a filtering mechanism that allows us to focus on the most impo
 
 Example of Pareto chart:
 
-```{r pareto, warning=FALSE, message=FALSE}
+```{r pareto, warning=FALSE, message=FALSE, eval = FALSE}
 pOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
 poImport <- c(5,2,2,4,5)
 createParetoChart(pOptions,poImport)
@@ -52,7 +52,7 @@ A strategy canvas is a tool made popular by the book, [Blue Ocean Strategy][http
 
 Example of strategy canvas:
 
-```{r canvas, warning=FALSE, message=FALSE}
+```{r canvas, warning=FALSE, message=FALSE, eval = FALSE}
 sOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
 soImport1 <- c(1,5,2,5,1)
 soImport2 <- c(5,1,5,1,5)
