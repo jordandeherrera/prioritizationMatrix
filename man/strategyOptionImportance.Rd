@@ -7,8 +7,7 @@
 strategyOptionImportance(arrayList = c("Option 1", "Option 2", "Option 3"))
 }
 \arguments{
-\item{arrayList}{a list of strategy options to assign numeric importance.  Can be taken from \link{readStrategyOptions} 
-output object of \code{sOptions}.}
+\item{arrayList}{a list of strategy options to assign numeric importance.  Can be taken from \link{readStrategyOptions}.}
 }
 \value{
 This function does not return any values.  Instead, it saves an array numeric object based

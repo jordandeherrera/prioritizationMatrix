@@ -7,8 +7,7 @@
 paretoImportance(arrayList = c("Customer 1", "Customer 2", "Customer 3"))
 }
 \arguments{
-\item{arrayList}{a list of values to assign numeric importance.  Can be taken from \link{readParetoOption} 
-output object of \code{pOptions}.}
+\item{arrayList}{a list of values to assign numeric importance.  Can be taken from \link{readParetoOptions}.}
 }
 \value{
 This function does not return any values.  Instead, it saves an array numeric object based
@@ -19,13 +18,8 @@ This function assigns relative rank and importance to the Pareto options defined
 These numerical assignments are then used by \link{createParetoChart}.
 }
 \examples{
+\dontrun{
 paretoImportance(pOptions)
-# On a scale of 1 to 5, how important is Job 1 ?
-1
-# On a scale of 1 to 5, how important is Job 2 ?
-5
-# On a scale of 1 to 5, how important is Job 3 ?
-3
-#Value available in global variable poImport = c(1,5,3)
+}
 
 }

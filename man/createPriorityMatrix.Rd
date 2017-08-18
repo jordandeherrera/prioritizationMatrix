@@ -10,16 +10,16 @@ createPriorityMatrix(vImport = c(3, 3, 5), pImport = c(2, 5, 5),
 }
 \arguments{
 \item{vImport}{a numeric list assigning importance to values.
-Can be taken from \link{valuesImportance} output object of \code{vImport}.}
+Can be taken from \link{valuesImportance}.}
 
 \item{pImport}{a numeric list assigning importance to priorities
-Can be taken from \link{priorityImportance} output object of \code{pImport}.}
+Can be taken from \link{priorityImportance}.}
 
 \item{priorities}{a character array of priorities.
-Can be taken from \link{readPriorities} output object of \code{priorities}.}
+Can be taken from \link{readPriorities}.}
 
 \item{values}{a character array of values
-Can be taken from \link{readValues} output object of \code{values}.}
+Can be taken from \link{readValues}.}
 }
 \value{
 This function returns a priority matrix as a data frame (values as columns and priorities as rows).  

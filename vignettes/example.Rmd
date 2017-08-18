@@ -33,7 +33,7 @@ priorities <- c("Compelling use case","Affordable and low cost","More convenient
 values <- c("Social Currency","Price","Design","Function","Personal Narrative")
 vImport <- c(5,2,2,4,5)
 pImport <- c(5,2,3)
-createHeatmap()
+createHeatmap(vImport,pImport,priorities,values)
 ```
 
 ## Pareto Analysis

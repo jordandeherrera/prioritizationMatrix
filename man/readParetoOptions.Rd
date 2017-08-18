@@ -8,15 +8,15 @@ readParetoOptions()
 }
 \value{
 This function does not return any values.  Instead, it saves an array character object based
-on the user's input to the global environment for use in \link{paretoImportance}.  The object is accessible at
-\code{pOptions}.
+on the user's input to the global environment for use in \link{paretoImportance}.
 }
 \description{
 This is a simple function that provides a prompt to the user to enter in Pareto strategic options. These
 will be the x-axis of a Pareto chart in \link{createParetoChart}.
 }
 \examples{
+\dontrun{
 readParetoOptions()
-Job 1, Job 2, Job 3
+}
 
 }

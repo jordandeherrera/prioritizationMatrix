@@ -16,8 +16,8 @@ the names of rows for the priority matrix.  No parameters are taken for this fun
 values are taken from the console.
 }
 \examples{
+\dontrun{
 readPriorities()
-Professional certifications, On the job learning, Mentorship
-#Value available in global variable priorities = c("Professional certifications","On the job learning","Mentorship")
+}
 
 }

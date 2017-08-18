@@ -1,4 +1,0 @@
-"0","sOptions <- c(""Social Currency"",""Price"",""Design"",""Function"",""Personal Narrative"")"
-"0","soImport1 <- c(1,5,2,5,1)"
-"0","soImport2 <- c(5,1,5,1,5)"
-"0","createStrategyCanvas(sOptions,soImport1,soImport2)"

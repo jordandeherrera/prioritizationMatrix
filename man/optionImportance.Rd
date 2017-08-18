@@ -9,7 +9,7 @@ optionImportance(arrayList = c("Professional certifications",
 }
 \arguments{
 \item{arrayList}{a list of priorities to evaluate numeric significance for a given strategic option.
-Can be taken from \link{readPriorities} output object of \code{priorities}.}
+Can be taken from \link{readPriorities}.}
 }
 \value{
 This function returns a data frame to evaluate strategic option alignment with a given set of priorities
@@ -20,14 +20,8 @@ This function determines whether a given strategic option is aligned with priori
 \link{createPriorityMatrix} and \link{createHeatmap}.
 }
 \examples{
+\dontrun{
 optionImportance(priorities)
-# Enter the name of the option being considered:
-Job from Company A
-# On a scale of 1 to 5, how much does Job.from.Company.A fulfill Professional certifications ?
-1
-# On a scale of 1 to 5, how much does Job.from.Company.A fulfill On the job learning ?
-5
-# On a scale of 1 to 5, how much does Job.from.Company.A fulfill Mentorship ?
-5
+}
 
 }

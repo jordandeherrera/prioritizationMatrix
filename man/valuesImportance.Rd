@@ -7,7 +7,7 @@
 valuesImportance(arrayList = c("Contribution", "Certainty", "Connection"))
 }
 \arguments{
-\item{arrayList}{a list of values to assign numeric importance.  Can be taken from \link{readValues} output object of \code{values}.}
+\item{arrayList}{a list of values to assign numeric importance.  Can be taken from \link{readValues}.}
 }
 \value{
 This function does not return any values.  Instead, it saves an array numeric object based
@@ -18,13 +18,8 @@ This function assigns relative rank and importance to the values defined in \lin
 numerical assignments are then used by \link{createPriorityMatrix} and \link{createHeatmap}.
 }
 \examples{
+\dontrun{
 valuesImportance()
-# On a scale of 1 to 5, how important is Contribution ?
-5
-# On a scale of 1 to 5, how important is Certainty ?
-2
-# On a scale of 1 to 5, how important is Connection ?
-5
-#Value available in global variable vImport = c(5,2,5)
+}
 
 }

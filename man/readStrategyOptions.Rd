@@ -8,16 +8,15 @@ readStrategyOptions()
 }
 \value{
 This function does not return any values.  Instead, it saves an array character object based
-on the user's input to the global environment for use in \link{strategyOptionImportance}.  
-The object is accessible at \code{sOptions}.
+on the user's input to the global environment for use in \link{strategyOptionImportance}.
 }
 \description{
 This is a simple function that provides a prompt to the user to enter in strategic options. These
 will be the x-axis of a strategy canvas in \link{createStrategyCanvas}.
 }
 \examples{
+\dontrun{
 readStrategyOptions()
-Bookkeeping, Internal Controls Analysis, Financial and Business Review
-#Value available in global variable sOptions = c("Bookkeeping","Internal Controls Analysis", Financial and Business Review")
+}
 
 }

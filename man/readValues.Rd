@@ -16,8 +16,8 @@ the names of columns for the priority matrix.  No parameters are taken for this 
 values are taken from the console.
 }
 \examples{
+\dontrun{
 readValues()
-Contribution, Certainty, Connection
-#Value available in global variable values = c("Contribution","Certainty","Connection")
+}
 
 }

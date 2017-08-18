@@ -4,7 +4,16 @@
 \alias{createHeatmap}
 \title{Create Heatmap}
 \usage{
-createHeatmap()
+createHeatmap(vImport, pImport, priorities, values)
+}
+\arguments{
+\item{vImport}{numeric importance assigned to values from \link{valuesImportance}}
+
+\item{pImport}{numeric importance assigned to priorities from \link{priorityImportance}}
+
+\item{priorities}{a list of priorities from \link{readPriorities}}
+
+\item{values}{a list of values from \link{readValues}}
 }
 \value{
 This function returns a highcharter object (heatmap).
@@ -13,6 +22,6 @@ This function returns a highcharter object (heatmap).
 This function creates a heatmap of the priority matrix available in \link{createPriorityMatrix}.
 }
 \examples{
-createHeatmap()
+createHeatmap(vImport,pImport,priorities,values)
 
 }

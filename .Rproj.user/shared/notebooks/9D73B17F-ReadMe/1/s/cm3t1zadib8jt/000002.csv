@@ -1,6 +1,0 @@
-"0","library(priorityMatrix)"
-"0","priorities <- c(""Compelling use case"",""Affordable and low cost"",""More convenient"")"
-"0","values <- c(""Social Currency"",""Price"",""Design"",""Function"",""Personal Narrative"")"
-"0","vImport <- c(5,2,2,4,5)"
-"0","pImport <- c(5,2,3)"
-"0","createHeatmap()"
