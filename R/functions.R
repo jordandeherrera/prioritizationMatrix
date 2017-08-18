@@ -15,11 +15,11 @@
 #' @export
 readValues <- function()
 {
-  values <<- NULL
+  assign("values",NULL,envir = .GlobalEnv)
   
   cat ("Enter in names of values separated by commas and spaces (i.e., Goal1, Goal2, Goal3, etc.")
-  values <<- readline()
-  values <<- unlist(strsplit(values, split=", "))
+  assign("values",readline(),envir = .GlobalEnv)
+  assign("values",unlist(strsplit(values, split=", ")),envir = .GlobalEnv)
 }
 
 #' Read Priorities
@@ -39,11 +39,11 @@ readValues <- function()
 #' @export
 readPriorities <- function()
 {
-  priorities <<- NULL
+  assign("priorities",NULL,envir = .GlobalEnv)
   
   cat ("Enter in names of priorities separated by commas and spaces (i.e., Priority1, Priority2, etc.")
-  priorities <<- readline()
-  priorities <<- unlist(strsplit(priorities, split=", "))
+  assign("priorities",readline(),envir = .GlobalEnv)
+  assign("priorities",unlist(strsplit(values, split=", ")),envir = .GlobalEnv)
 }
 
 #' Rank Importance of Values
@@ -68,12 +68,13 @@ readPriorities <- function()
 #'
 #' @export
 valuesImportance <- function(arrayList = c("Contribution","Certainty","Connection")){
-  vImport <<- NULL
+  
+  assign("vImport",NULL,envir = .GlobalEnv)
   
   for(i in (1:length(arrayList))){
     cat ("On a scale of 1 to 5, how important is",arrayList[i],"?")
     vImportNewLine <- readline()
-    vImport <<- as.numeric(c(vImport,vImportNewLine))
+    assign("vImport",as.numeric(c(vImport,vImportNewLine)),envir = .GlobalEnv)
   }
 }
 
@@ -100,12 +101,12 @@ valuesImportance <- function(arrayList = c("Contribution","Certainty","Connectio
 #' @export
 priorityImportance <- function(arrayList = c("Professional certifications", 
                                              "On the job learning", "Mentorship")){
-  pImport <<- NULL
+  assign("pImport",NULL,envir = .GlobalEnv)
   
   for(i in (1:length(arrayList))){
     cat ("On a scale of 1 to 5, how important is",arrayList[i],"?")
     pImportNewLine <- readline()
-    pImport <<- as.numeric(c(pImport,pImportNewLine))
+    assign("pImport",as.numeric(c(pImport,pImportNewLine)),envir = .GlobalEnv)
   }
 }
 
@@ -204,11 +205,9 @@ createHeatmap <- function (){
   
   hcaes_ <- hcaes_string
   
-  endValue <- sum(length(values),1)
-  
   data <- createPriorityMatrix(vImport,pImport,priorities,values) %>% 
     mutate(Name = row.names(.)) %>% 
-    gather(.,Values,Value,1:endValue)
+    gather(.,Values,Value,1:length(values)+1)
   
   hc <- hchart(data, "heatmap", hcaes_(x = "Values", y = "Name", 
                                        value = "Value")) %>% 
@@ -257,22 +256,22 @@ createHeatmap <- function (){
 optionImportance <- function(arrayList = c("Professional certifications", 
                                              "On the job learning", "Mentorship")){
   # Load required libraries
-  require(dplyr)
-  require(lazyeval)
-  require(stringr)
+  requireNamespace("dplyr")
+  requireNamespace("lazyeval")
+  requireNamespace("stringr")
   
   # Enter in option name
   cat ("Enter the name of the option being considered:")
-  optionName <<- str_replace_all(readline()," ",".")
+  optionName <- str_replace_all(readline()," ",".")
   
   # Set option importance equal to NULL prior to loop
-  oImport <<- NULL
+  oImport <- NULL
   
   # Loop through priority list to evaluate how much the option under evaluation satisfies each criteria
   for(i in (1:length(arrayList))){
     cat("On a scale of 1 to 5, how much does",optionName,"fulfill",arrayList[i],"?")
     oImportNewLine <- readline()
-    oImport <<- as.numeric(c(oImport,oImportNewLine))
+    oImport <- as.numeric(c(oImport,oImportNewLine))
   }
   
   # Remove NA values
@@ -311,16 +310,15 @@ optionImportance <- function(arrayList = c("Professional certifications",
 #' @examples
 #' readParetoOptions()
 #' Job 1, Job 2, Job 3
-#' #Value available in global variable pOptions = c("Job 1","Job 2","Job 3")
 #'
 #' @export
 readParetoOptions <- function()
 {
-  pOptions <<- NULL
+  assign("pOptions",NULL, envir = .GlobalEnv)
   
   cat ("Enter in names of Pareto options separated by commas and spaces (i.e., Option1, Option2, Option3, etc.")
-  pOptions <<- readline()
-  pOptions <<- unlist(strsplit(pOptions, split=", "))
+  assign("pOptions",readline(),envir = .GlobalEnv)
+  assign("pOptions",unlist(strsplit(pOptions, split=", ")),envir = .GlobalEnv)
 }
 
 #' Rank Importance of Pareto Options
@@ -346,12 +344,12 @@ readParetoOptions <- function()
 #'
 #' @export
 paretoImportance <- function(arrayList = c("Customer 1","Customer 2","Customer 3")){
-  poImport <<- NULL
+  assign("poImport",NULL,envir = .GlobalEnv)
   
   for(i in (1:length(arrayList))){
     cat ("On a scale of 1 to 5, how important is",arrayList[i],"?")
     poImportNewLine <- readline()
-    poImport <<- as.numeric(c(poImport,poImportNewLine))
+    assign("poImport",as.numeric(c(poImport,poImportNewLine)),envir = .GlobalEnv)
   }
 }
 
@@ -415,11 +413,11 @@ createParetoChart <- function(pOptions = c("Customer 1","Customer 2","Customer 3
 #' @export
 readStrategyOptions <- function()
 {
-  sOptions <<- NULL
+  assign("sOptions",NULL,envir = .GlobalEnv)
   
   cat ("Enter in names of strategy options separated by commas and spaces (i.e., Option1, Option2, Option3, etc.")
-  sOptions <<- readline()
-  sOptions <<- unlist(strsplit(sOptions, split=", "))
+  assign("sOptions",readline(),envir = .GlobalEnv)
+  assign("sOptions",unlist(strsplit(sOptions, split=", ")),envir = .GlobalEnv)
 }
 
 #' Rank Importance of Strategy Options
@@ -437,16 +435,16 @@ readStrategyOptions <- function()
 #' strategyOptionImportance(sOptions)
 #' @export
 strategyOptionImportance <- function(arrayList = c("Option 1","Option 2","Option 3")){
-  soImport1 <<- NULL
-  soImport2 <<- NULL
+  assign("soImport1",NULL,envir = .GlobalEnv)
+  assign("soImport2",NULL,envir = .GlobalEnv)
   
   for(i in (1:length(arrayList))){
     cat ("On a scale of 1 to 5, what are the industry standards for",arrayList[i],"?")
     soImportNewLine <- readline()
-    soImport1 <<- as.numeric(c(soImport1,soImportNewLine))
+    assign("soImport1",as.numeric(c(soImport1,soImportNewLine)),envir = .GlobalEnv)
     cat ("On a scale of 1 to 5, what are the ideal differentiated standards for",arrayList[i],"?")
     soImportNewLine <- readline()
-    soImport2 <<- as.numeric(c(soImport2,soImportNewLine))
+    assign("soImport2",as.numeric(c(soImport2,soImportNewLine)),envir = .GlobalEnv)
   }
 }
 
@@ -476,9 +474,9 @@ strategyOptionImportance <- function(arrayList = c("Option 1","Option 2","Option
 #' @export
 createStrategyCanvas <- function(sOptions = c("Option 1","Option 2","Option 3"),soImport1 = c(5,3,1),
                                  soImport2 = c(1,3,5)){
-  require(dplyr)
-  require(highcharter)
-  require(tidyr)
+  requireNamespace("dplyr")
+  requireNamespace("highcharter")
+  requireNamespace("tidyr")
   
   data <- data.frame(Names = sOptions,
                      Industry = soImport1,

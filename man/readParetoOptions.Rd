@@ -18,6 +18,5 @@ will be the x-axis of a Pareto chart in \link{createParetoChart}.
 \examples{
 readParetoOptions()
 Job 1, Job 2, Job 3
-#Value available in global variable pOptions = c("Job 1","Job 2","Job 3")
 
 }
