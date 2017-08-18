@@ -30,8 +30,7 @@ priorities <- c("Compelling use case","Affordable and low cost","More convenient
 values <- c("Social Currency","Price","Design","Function","Personal Narrative")
 vImport <- c(5,2,2,4,5)
 pImport <- c(5,2,3)
-hc1 <- createHeatmap()
-hc1
+createHeatmap(vImport,pImport,priorities,values)
 ```
 
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/heatmap-1.png)
@@ -46,8 +45,7 @@ Example of Pareto chart:
 ``` r
 pOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
 poImport <- c(5,2,2,4,5)
-hc2 <- createParetoChart(pOptions,poImport)
-hc2
+createParetoChart(pOptions,poImport)
 ```
 
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/pareto-1.png)
@@ -63,8 +61,7 @@ Example of strategy canvas:
 sOptions <- c("Social Currency","Price","Design","Function","Personal Narrative")
 soImport1 <- c(1,5,2,5,1)
 soImport2 <- c(5,1,5,1,5)
-hc3 <- createStrategyCanvas(sOptions,soImport1,soImport2)
-hc3
+createStrategyCanvas(sOptions,soImport1,soImport2)
 ```
 
 ![](ReadMe_files/figure-markdown_github-ascii_identifiers/canvas-1.png)
