@@ -1,0 +1,47 @@
+#' Prioritization Matrix Package
+#'
+#' The Priortization Matrix package allows users to set strategic priorities using standard tools such as 
+#' a Pareto control chart, Prioritization Matrix (popular in Six Sigma toolkits), and Strategy Canvas (from Blue Ocean Strategy).
+#'
+#' The key functions you're likely to need from \pkg{priorityMatrix} are:
+#' \subsection{Prioritzation Matrix}{
+#' 
+#' \link{readValues} - a function to input value names
+#' 
+#' \link{readPriorities} - a function to input priority names
+#' 
+#' \link{valuesImportance} - a function to assign value importance
+#' 
+#' \link{priorityImportance} - a function to assign priority importance
+#' 
+#' \link{createHeatmap} - a function to create a priority matrix visualization
+#' 
+#' \link{optionImportance} - a function to assess fit of a strategic option with priorities and values
+#' 
+#' }
+#' 
+#' \subsection{Pareto Chart}{
+#' 
+#' \link{readParetoOptions} - function to list out Pareto options
+#' 
+#' \link{paretoImportance} - rank relative importance of Pareto options
+#' 
+#' \link{createParetoChart} - create Pareto chart visualization
+#' 
+#' }
+#' 
+#' \subsection{Strategy Canvas}{
+#' 
+#' \link{readStrategyOptions} - function to list out strategic options
+#' 
+#' \link{strategyOptionImportance} - rank relative importance of strategic options
+#' 
+#' \link{createStrategyCanvas} - function to create strategy canvas visualization
+#' 
+#' }
+#' 
+#' \subsection{Vignette}{
+#' Otherwise refer to the vignettes.
+#' }
+#' 
+"_PACKAGE"

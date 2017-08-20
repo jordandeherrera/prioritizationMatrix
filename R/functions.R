@@ -574,28 +574,3 @@ createStrategyCanvas <- function(sOptions = c("Option 1","Option 2","Option 3"),
 #'  vImport
 #' }
 "vImport"
-
-#' Prioritization Matrix Package
-#'
-#' The Priortization Matrix package allows users to set strategic priorities using standard tools such as 
-#' a Pareto control chart, Prioritization Matrix (popular in Six Sigma toolkits), and Strategy Canvas (from Blue Ocean Strategy).
-#'
-#' The key functions you're likely to need from \pkg{priorityMatrix} are:
-#' \subsection{Prioritzation Matrix}{
-#' 
-#' \code{\link{readValues}} - a function to input value names
-#' 
-#' \code{\link{readPriorities}} - a function to input priority names
-#' 
-#' \code{\link{valuesImportance}} - a function to assign value importance
-#' 
-#' \code{\link{priorityImportance}} - a function to assign priority importance
-#' 
-#' \code{\link{createHeatmap}} - a function to create a priority matrix visualization
-#' 
-#' \code{\link{optionImportance}} - a function to assess fit of a strategic option with priorities and values
-#' 
-#' }
-#' 
-#' Otherwise refer to the vignettes.
-"_PACKAGE"
