@@ -43,7 +43,7 @@ readPriorities <- function()
   
   cat ("Enter in names of priorities separated by commas and spaces (i.e., Priority1, Priority2, etc.")
   assign("priorities",readline(),envir = .GlobalEnv)
-  assign("priorities",unlist(strsplit(values, split=", ")),envir = .GlobalEnv)
+  assign("priorities",unlist(strsplit(priorities, split=", ")),envir = .GlobalEnv)
 }
 
 #' Rank Importance of Values
