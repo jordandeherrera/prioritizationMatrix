@@ -204,8 +204,8 @@ createHeatmap <- function (vImport,pImport,priorities,values){
   hcaes_ <- hcaes_string
   
   data <- createPriorityMatrix(vImport,pImport,priorities,values) %>% 
-    mutate(Name = row.names(.)) %>% 
-    gather(.,Values,Value,1:length(values)+1)
+    mutate(Name = row.names(.)) %>%
+    gather(.,Values,Value,-contains("Name"))
   
   hc <- hchart(data, "heatmap", hcaes_(x = "Values", y = "Name", 
                                        value = "Value")) %>% 
